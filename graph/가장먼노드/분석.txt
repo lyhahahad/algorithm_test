@@ -10,7 +10,7 @@ dijkstra, Floyd-Warshall는 간선에 가중치가 있어야 사용이 가능하
 root값이 1번 노드인 그래프의 마지막 depth의 노드 숫자 
 bfs는 queue(first in first out), 인접행렬 or 인접리스트를 통해 구현할 수 있다.
 
-->ppseudo code
+->pseudo code
 
 -analysis : 
 worst, every, average
