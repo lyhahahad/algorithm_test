@@ -8,11 +8,49 @@ dijkstra, Floyd-Warshall는 간선에 가중치가 있어야 사용이 가능하
 간선에 가중치가 없이도 최단 경로를 탐색할 수 있는 알고리즘인 bfs를 사용해야 한다.
 
 root값이 1번 노드인 그래프의 마지막 depth의 노드 숫자 
-bfs는 queue(first in first out), 인접행렬 or 인접리스트를 통해 구현할 수 있다.
+bfs는 queue(first in first out)
+1.root를 queue에 enque한다.
+2.root값을 꺼내면서 root와 인접한 노드들을 queue에 추가한다.
+3.dequeue를 통해 노드를 꺼낸다.
+4.인접 노드들을 enqueue한다.(이미 방문한 노드는 무시한다, 이미 방문한 노드를 저장하는 변수 필요.)
+5.3,4 과정을 queue가 비워질 때까지 반복한다.
 
 ->pseudo code
+algorithm bfs
+    graph
+    root
+    queue
+    visited_node
+    enqueue(root)
+    while(queue.isNotEmpty){
+        visiting_node = dequeue() 
+        enqueue(visiting_node.child) #visited_node에 있는 노드는 제외하고 enqueue 진행.
+        visited_node.add(visiting_node)
+    } 
+
++문제에 맞게 커스터마이징(마지막 depth의 노드 숫자 계산)
+마지막 depth의 노드의 개수만 가져오면 되기 때문에 
+while문안에 child의 개수를 저장해주는 코드를 추가하면 된다.
+
+->pseudo code
+algorithm bfs_update
+    graph
+    root
+    queue
+    visited_node
+    enqueue(root)
+    visited_node.add(root)
+    while(queue.isNotEmpty){
+        visiting_node = dequeue()
+        #visited_node에 있는 노드는 제외하고 enqueue 진행.
+        enqueue(visiting_node.childs)
+        visited_node.add(visiting_node)
+        #depth를 표시할 만한 요소가 필요하다.
+    } 
+    return result
 
 -analysis : 
 worst, every, average
+
 
 -find better strategy :
