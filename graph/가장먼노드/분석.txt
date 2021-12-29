@@ -46,6 +46,14 @@ algorithm bfs_update
         enqueue(visiting_node.childs)
         visited_node.add(visiting_node)
         #depth를 표시할 만한 요소가 필요하다.
+        #더 이상 childs가 없는 노드가 나오면 result에 +1을 한다.
+        #만약 result가 1이상인 상황에서 그뒤에 childs가 enqueue 된다면 result를 0으로 바꾼다.
+        if(visited_node.childsnodenum==0){
+            result+=1
+        }
+        if(result>=1 and childsnode.num>0){
+            result=0
+        }
     } 
     return result
 
