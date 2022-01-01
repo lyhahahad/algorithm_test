@@ -48,10 +48,9 @@ algorithm bfs_update
         #depth를 표시할 만한 요소가 필요하다.
         #더 이상 childs가 없는 노드가 나오면 result에 +1을 한다.
         #만약 result가 1이상인 상황에서 그뒤에 childs가 enqueue 된다면 result를 0으로 바꾼다.
-        if(visited_node.childsnodenum==0){
+        if(visiting_node.childsnodenum==0){
             result+=1
-        }
-        if(result>=1 and childsnode.num>0){
+        }else if(result>=1 and visiting_node.childsnodenum>0){
             result=0
         }
     } 
@@ -67,12 +66,26 @@ while(queue.isNotEmpty){
         #depth를 표시할 만한 요소가 필요하다.
         #더 이상 childs가 없는 노드가 나오면 result에 +1을 한다.
         #만약 result가 1이상인 상황에서 그뒤에 childs가 enqueue 된다면 result를 0으로 바꾼다.
-        if(visited_node.childsnodenum==0){
+        if(visiting_node.childsnodenum==0){
             result+=1
-        }
-        if(result>=1 and childsnode.num>0){
+        }else if(result>=1 and visiting_node.childsnodenum>0){
             result=0
         }
     } 
+n : 노드 숫자, e : 브릿지 숫자
+space : queue(list, O(n)), visited_node(list, O(n))
+time : 
+dequeue = O(1)
+enqueue = O(1)
+queue_isEmpty = O(1)
+childsnodenum = O(e)
+childs = O(e)
+
+while문 최대 n번 반복.
+O(n*(1+1*e+1*e)) = n+2en => O(en)
+e = n 제곱(모든 노드가 연결돼 있다고 했을 때 각각)
+O(n 세제곱)
+=>매우 비효율적
+=>n제곱logn 혹은 n제곱으로 줄일 수 있는 방안이 없을까?
 
 -find better strategy :
