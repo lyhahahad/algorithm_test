@@ -58,7 +58,15 @@ algorithm bfs_update
 
 -analysis : 
 worst, every, average
-while(queue.isNotEmpty){
+
+algorithm bfs_update
+    graph
+    root
+    queue
+    visited_node
+    result = 0
+    enqueue(root)
+    while(queue.isNotEmpty){
         visiting_node = dequeue()
         #visited_node에 있는 노드는 제외하고 enqueue 진행.
         enqueue(visiting_node.childs)
@@ -72,6 +80,7 @@ while(queue.isNotEmpty){
             result=0
         }
     } 
+    return result
 n : 노드 숫자, e : 브릿지 숫자
 space : queue(list, O(n)), visited_node(list, O(n))
 time : 
@@ -87,5 +96,9 @@ e = n 제곱(모든 노드가 연결돼 있다고 했을 때 각각)
 O(n 세제곱)
 =>매우 비효율적
 =>n제곱logn 혹은 n제곱으로 줄일 수 있는 방안이 없을까?
+
+그래프에서 최단 거리를 계산할 수 있는 다른 알고리즘을 찾아봐야 한다.
+현재 상황에서 가중치가 없는 e의 최단 거리를 구하는 것은 bfs가 최선이다.
+때문에 위에 구현한 bfs의 함수들을 좀더 효율적으로 바꾸는 쪽으로 개선하는 것이 좋을 듯하다.
 
 -find better strategy :
