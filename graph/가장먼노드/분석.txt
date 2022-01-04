@@ -50,7 +50,7 @@ algorithm bfs_update
         #만약 result가 1이상인 상황에서 그뒤에 childs가 enqueue 된다면 result를 0으로 바꾼다.
         if(visiting_node.childsnodenum==0){
             result+=1
-        }else if(result>=1 and visiting_node.childsnodenum>0){
+        }else if(result>=1){
             result=0
         }
     } 
@@ -68,18 +68,36 @@ algorithm bfs_update
     enqueue(root)
     while(queue.isNotEmpty){
         visiting_node = dequeue()
-        #visited_node에 있는 노드는 제외하고 enqueue 진행.
         enqueue(visiting_node.childs)
         visited_node.add(visiting_node)
-        #depth를 표시할 만한 요소가 필요하다.
-        #더 이상 childs가 없는 노드가 나오면 result에 +1을 한다.
-        #만약 result가 1이상인 상황에서 그뒤에 childs가 enqueue 된다면 result를 0으로 바꾼다.
         if(visiting_node.childsnodenum==0){
             result+=1
-        }else if(result>=1 and visiting_node.childsnodenum>0){
+        }else if(result>=1){
             result=0
         }
     } 
+    return result
+
+algorithm childs
+    child_list
+    visited_node
+    visiting_node
+    for i in e:
+        if (visiting_node in i)
+            for j in i:
+                if(j not in visiting_node)
+                    child_list.append(j)
+    return child_list
+
+algorithm childsnodenum
+    result = 0
+    visited_node
+    visiting_node
+    for i in e:
+        if (visiting_node in i)
+            for j in i:
+                if(j not in visiting_node)
+                    result +=1
     return result
 n : 노드 숫자, e : 브릿지 숫자
 space : queue(list, O(n)), visited_node(list, O(n))
@@ -87,11 +105,11 @@ time :
 dequeue = O(1)
 enqueue = O(1)
 queue_isEmpty = O(1)
-childsnodenum = O(e)
+childsnodenum =O(e*2)=>O(e)
 childs = O(e)
 
 while문 최대 n번 반복.
-O(n*(1+1*e+1*e)) = n+2en => O(en)
+O(n*(1+1*e+1*e+1*e)) = n+3en => O(en)
 e = n 제곱(모든 노드가 연결돼 있다고 했을 때 각각)
 O(n 세제곱)
 =>매우 비효율적

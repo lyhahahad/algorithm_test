@@ -1,48 +1,53 @@
 def solution(n, edge):
     answer = 0
-    #다리
-    edge
-    #시작점
     root = 1
-    #다음 방문할 곳 넣을 큐
     queue = []
-    #이미 방문한 곳 넣을 리스트
     visited_node = []
-    #root 넣고 시작.
-    enqueue(root)
-    while(queue.isNotEmpty){
-        visiting_node = dequeue()
-        #visited_node에 있는 노드는 제외하고 enqueue 진행.
-        enqueue(queue, childs(edge, visiting_node))
+    enqueue(queue,root)
+    while(not queue_isEmpty(queue)):
+        visiting_node = dequeue(queue)
+        enqueue(queue, childs(edge, visiting_node, visited_node))
         visited_node.append(visiting_node)
-        #depth를 표시할 만한 요소가 필요하다.
-        #더 이상 childs가 없는 노드가 나오면 result에 +1을 한다.
-        #만약 result가 1이상인 상황에서 그뒤에 childs가 enqueue 된다면 result를 0으로 바꾼다.
-        if(visited_node.childsnodenum==0){
+        print(visiting_node)
+        print(visited_node)
+        if(childsnodenum(edge, visiting_node, visited_node)==0):
             answer+=1
-        }
-        if(answer>=1 and childsnode.num>0){
+        elif(answer>=1) : 
             answer=0
-        }
-    } 
+        print(answer)
     return answer
 
 def enqueue(queue,i):
-    queue.extend(i)
+    queue.append(i)
     return
 
 def dequeue(queue):
     return(queue.pop(0))
 
 def queue_isEmpty(queue):
-    if(queue.length()==0):
+    if(len(queue)==0):
         return True
-    return false
+    return False
 
-# 방문한 노드의 자식 노드
-# 이미 방문한 노드들은 제외.
-def childs(edge, visiting_node):
-    
-# 방문한 노드의 자식 노드 숫자.
-def childsnodenum(edge, visiting_node):
-    return childs.length()
+def childs(edge, visiting_node, visited_node):
+    child_list=[]
+    for i in edge:
+        if (visiting_node in i):
+            for j in i:
+                if(visiting_node != j):
+                    child_list.append(j)
+    return child_list
+
+def childsnodenum(edge, visiting_node, visited_node):
+    result = 0
+    for i in edge:
+        if (visiting_node in i):
+            for j in i:
+                if(visiting_node != j):
+                    result +=1
+    return result
+
+
+n=6
+edge = 	[[3, 6], [4, 3], [3, 2], [1, 3], [1, 2], [2, 4], [5, 2]]
+print(solution(n,edge))
