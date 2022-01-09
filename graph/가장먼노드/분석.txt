@@ -1,6 +1,8 @@
 12/31 : 수도코드 time, space 분석
 -problem : 그래프에서 1번 노드로부터 가장 멀리 떨어진 노드의 수를 구한다.
--input : n(노드 개수), v(다리 개수)
+-input : n(노드 개수), v(다리 개수) 
+undirected, unweight 그래프 + 연결성을 확인하는 연산이 많은 것도 아니기 때문에 인접 행렬보다는 인접 리스트로 구현하는 것이 적절하다.
+또한 사이클이 존재할 수 있기 때문에 트리 관련 알고리즘으로 푸는 것은 힘들다.
 -output : 가장 멀리 떨어진 노드 개수
 -design strategy : 
 divide and conquer, greedy, dynamic programming, back tracking, branch and bound
