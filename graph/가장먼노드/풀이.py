@@ -8,7 +8,7 @@ def solution(n, edge):
         visiting_node = dequeue(queue)
         enqueue(queue, childs(edge, visiting_node, visited_node,queue))
         visited_node.append(visiting_node)
-        if(childsnodenum(edge, visiting_node, visited_node)==0):
+        if(childsnodenum(edge, visiting_node, visited_node)==0 and visiting_node  != 1):
             answer+=1
         elif(answer>=1) : 
             answer=0
@@ -50,8 +50,8 @@ def childsnodenum(edge, visiting_node, visited_node):
     return result
 
 
-n=6
-edge = 	[[3, 6], [4, 3], [3, 2], [1, 3], [1, 2], [2, 4], [5, 2]]
+n=7
+edge = 	[[1,2],[2,3],[3,4],[1,5],[5,6],[6,7]]	
 # for i in range(0,8):
 #     print(edge.pop(0))
 # print(edge)
