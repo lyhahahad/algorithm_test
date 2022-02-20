@@ -1,0 +1,16 @@
+-problem : i,j 번째 배열 사이에서 k번째 숫자를 구한다.
+-input : 배열,  i,j,k배열을 담은 배열
+-output : i,j,k배열에서 각각의 k번째 숫자 배열
+-design strategy : 
+https://www.geeksforgeeks.org/analysis-of-different-sorting-techniques/
+sorting 알고리즘 종류 학습
+bubble
+selection
+merge
+heap
+quick
+
+->pseudo code
+
+-find better strategy :
+time, space 분석

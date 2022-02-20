@@ -1,0 +1,15 @@
+*bubble sort
+인접한 요소가 잘못된 순서로 돼있을 때 반복적으로 swapping을 진행한다.
+0부터 n-1번째 인덱스까지 순서대로 잘못된 순서인 인접 요소들을 swapping한다.
+n개의 요소가 있다고 했을 때 n-1번 시행한다.
+순회할 때마다 비교는 every case n-1번, swapping은 worst case n-1번, 순회는 every case n-1번 실행된다.
+o((n-1)*(n-1+n-1)) => o(n^2)
+
+*insertion sort
+정렬되지 않은 부분의 값을 선택해 정렬된 부분의 올바른 위치에 배치한다.
+정렬을 n번 실행하면 n번째까지 정렬이 완료된다.
+n+1번째 요소를 0부터 n번까지 순서대로 비교해서 큰 요소가 나올때까지 진행하고 큰요소가 나오면 이전 인덱스에 넣는다.
+순회는 every case n-1번, 비교, swapping은 worst case (정렬된 배열 개수-1) 
+o((n-1)*2*(정렬된 배열 개수-1)) => o(n^2)
+
+*linked list vs arraylist 
