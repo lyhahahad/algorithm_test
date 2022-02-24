@@ -10,17 +10,7 @@ merge
 heap
 quick
 
-=>heap이 가장 효율적
-space 사용도 줄이기 위해 inplace로 진행
--heapify() : minheap의 경우 부모가 자식보다 작게 만드는 것.
-heapify는 자식노드들이 heapified한 상황에서만 적용될 수 있다.
-처음 들어온 배열을 heapified하게 바꾸는 방법 생각해보기.
-
-heapsort() : root를 하나씩 꺼내고 heapify를 진행한다.
-
-
+->pseudo code
 
 -find better strategy :
-1.한번에 싹다 정렬하고 거기서 바로 답을 구한다.
-2.구간을 나눠 일일히 정렬하고 각각의 답을 구한다.
 time, space 분석
