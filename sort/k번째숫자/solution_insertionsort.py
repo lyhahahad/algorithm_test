@@ -1,4 +1,4 @@
-#원리 : 우측배열에서 하나하나 가져와 좌측 배열은 sorted된 상태로 만든다.
+#O(N^2)
 def insertionsort(arr,n):
     for i in range(1,n):
         n = arr[i]

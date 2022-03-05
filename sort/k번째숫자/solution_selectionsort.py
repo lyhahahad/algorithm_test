@@ -1,4 +1,4 @@
-#원리 : 남은 것 중 가장 작은 요소를 찾아 정렬된 부분의 가장 뒤에 합친다.
+#O(N^2)
 def selection_sort(arr,n):
     for i in range(n-1):
         min_index = i

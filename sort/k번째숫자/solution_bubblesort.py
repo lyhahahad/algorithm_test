@@ -1,4 +1,4 @@
-#원리 : 인접한 요소끼리 비교해 가장 큰 숫자가 배열의 끝부터 채우기.
+#O(N^2)
 def bubble_sort(arr,n):
     for i in range(n-1):
         for j in range(n-1-i):

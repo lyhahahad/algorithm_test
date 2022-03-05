@@ -1,16 +1,16 @@
-### 정렬 알고리즘 비교 분석
-https://www.geeksforgeeks.org/analysis-of-different-sorting-techniques/
+### 정렬 알고리즘 비교 분석<br>
+https://www.geeksforgeeks.org/analysis-of-different-sorting-techniques/<br>
 
-type|time Complexity best case|average|worst|Space Complexity
-Bubble|N|N^2|N^2|O(1)
-selection|N^2|N^2|N^2|O(1)
-insertion|N|N^2|N^2|O(1)
-Merge |NlogN|NlogN|NlogN|O(N)
-Quick |NlogN|NlogN|N^2|O(logN)
-Heap |NlogN|NlogN|NlogN|O(1)
-Radix |Nk|Nk|Nk|O(N + k)
-count|N + k|N + k|N + k|O(k)
-Bucket|N + k|N + k|N^2|O(N)
+type|time Complexity best case|average|worst|Space Complexity<br>
+Bubble|N|N^2|N^2|O(1)<br>
+selection|N^2|N^2|N^2|O(1)<br>
+insertion|N|N^2|N^2|O(1)<br>
+Merge |NlogN|NlogN|NlogN|O(N)<br>
+Quick |NlogN|NlogN|N^2|O(logN)<br>
+Heap |NlogN|NlogN|NlogN|O(1)<br>
+Radix |Nk|Nk|Nk|O(N + k)<br>
+count|N + k|N + k|N + k|O(k)<br>
+Bucket|N + k|N + k|N^2|O(N)<br>
 <br>
 Bubble,selection, insertion은 space Complexity가 O(1)으로 메모리 측면에서는 우수하지만 time Complexity는 O(N^2)으로 좋지 않다.<br>
 
