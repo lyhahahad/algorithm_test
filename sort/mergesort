@@ -1,0 +1,23 @@
+1.mergesort
+mergesort(index low, index high){
+    index mid;
+    if(low<high){
+        mid = (low+high)/2;
+        mergesort(low, mid)
+        mergesort(mid+1,high)
+        merge(low,mid,high)
+    }
+}
+merge2(index low, index mid, index high){
+    index i=low, j=mid+1, k=low; keytype U[low..high
+    while (i <= mid && j <= high) {
+        if (S[i] < S[j]) { U[k] = S[i]; i++; 
+        else { U[k] = S[j]; j++; }
+                k++;
+        }
+    if (i > mid)
+        copy S[j] through S[high] to U[k] through U[high];
+    else
+        copy S[i] through S[mid] to U[k] through U[high];
+    copy U[low] through U[high] to S[low] through S[high];
+}
