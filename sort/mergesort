@@ -1,4 +1,5 @@
 1.mergesort
+memory usage : result(s), left array(u), right array(v)
 mergesort(index low, index high){
     index mid;
     if(low<high){
@@ -8,8 +9,11 @@ mergesort(index low, index high){
         merge(low,mid,high)
     }
 }
+
+U : 중간 결과 담는 array
+S : 중간에는 첫 INPUT담고 있는 ARRAY 마지막엔 최종 결과를 담는 ARRAY
 merge2(index low, index mid, index high){
-    index i=low, j=mid+1, k=low; keytype U[low..high
+    index i=low, j=mid+1, k=low;
     while (i <= mid && j <= high) {
         if (S[i] < S[j]) { U[k] = S[i]; i++; 
         else { U[k] = S[j]; j++; }
@@ -21,3 +25,4 @@ merge2(index low, index mid, index high){
         copy S[i] through S[mid] to U[k] through U[high];
     copy U[low] through U[high] to S[low] through S[high];
 }
+
